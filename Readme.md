@@ -1,4 +1,4 @@
-﻿﻿﻿# $\color{Apricot}{React}$
+﻿﻿﻿$\color{Apricot}{React}$
 
 ### Link for Color Mode Button👉 https://5rashmi.github.io/React/
 
