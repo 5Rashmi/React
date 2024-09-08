@@ -1,34 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Button, Container, Flex, useColorMode } from "@chakra-ui/react";
+import { MdOutlineModeNight } from "react-icons/md";
+import { FaRegSun } from "react-icons/fa";
+import { color } from "framer-motion";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Container>
+      <Flex 
+      h={'100vh'} 
+      flexDirection={'row'}
+      alignItems={"center"}
+      justifyContent={"center"}
+      gap={4} >
+        
+        <Button w={100} h={100} onClick={toggleColorMode}>
+          {colorMode === 'light' ? <MdOutlineModeNight size={50} color={"blue"}/> : <FaRegSun size={50} color={"orange"}/>}
+        </Button>
+
+        <Button w={100} h={100} fontSize={50} onClick={toggleColorMode}>
+          {colorMode === 'light' ? "🌛" : "🌞"}
+        </Button>
+
+      </Flex>
+    </Container>
   )
 }
 
